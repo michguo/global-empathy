@@ -1,0 +1,57 @@
+<!-- views/edit.ejs -->
+<!doctype html>
+<html>
+<head>
+  <% include ./partials/head %>
+</head>
+<body>
+  <header>
+    <% include ./partials/header %>
+  </header>    
+  <div class="container">
+    <div class="page-header text-center">
+      <h1>Edit Profile</h1>
+      <!-- <a href="/logout" class="btn btn-default btn-sm">Logout</a> -->
+    </div>
+
+    <form id="user-info" action="/update" method="post" accept-charset="utf-8">
+      <table class="table table-hover">                    
+        <tr >
+          <td class="col-md-3 field-name">First Name</td>
+          <td >
+                  <input name="firstName" type="text" class="form-control"  placeholder="Enter name" value='<%= user.local.firstName%>'>
+          </td>
+        </tr>
+        <tr >
+          <td class="col-md-3 field-name">Last Name</td>
+          <td >
+                  <input name="lastName" type="text" class="form-control"  placeholder="Enter name" value='<%= user.local.lastName%>'>
+          </td>
+        </tr>
+        <tr >
+          <td class="col-md-3 field-name">Email</td>
+          <td>
+                  <input name="email" type="email" class="form-control"  placeholder="Enter email" value=<%= user.local.email %>>
+          </td>
+        </tr>
+        <tr >
+          <td class="col-md-3 field-name">Country</td>
+          <td>
+                  <input name="country" type="text" class="form-control"  placeholder="Enter email" value=<%= user.local.country %>>
+          </td>
+        </tr>
+        <tr >
+          <td class="col-md-3 field-name">Interests</td>
+          <td>
+                  <input name="interests" type="text" class="form-control"  placeholder="Enter email" value=<%= user.local.interests %>>
+          </td>
+        </tr>                                                  
+      </table>
+        <div class="text-center">
+                <button id="submit" type="submit" class="btn btn-primary">Update Profile</button>
+        </div>
+    </form>
+
+  </div>
+</body>
+</html>

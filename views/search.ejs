@@ -1,0 +1,41 @@
+<!-- views/search.ejs -->
+<!doctype html>
+<html>
+<head>
+  <% include ./partials/head %>
+</head>
+<body>
+  <header>
+    <% include ./partials/header %>
+  </header>    
+  <div class="container">
+    <div class="page-header text-center">
+      <h1>Search Results</h1>
+    </div>
+
+    <div class="row">
+
+      <!-- LOCAL INFORMATION -->
+      <% for (i = 0; i < users.length; i++) { %>
+        <div class="col-sm-6">
+          <div class="well">
+            <h3><span class="fa fa-user"></span> User</h3>
+
+            <p>
+              <strong>email</strong>: <%= users[i].local.email %><br>
+              <strong>country</strong>: <%= users[i].local.country %><br>
+              <strong>interests</strong>: <%= users[i].local.interests %>
+            </p>
+
+          </div>
+        </div>
+      <% } %>
+      <% if (users.length == 0) { %>
+        <p>No results found.<p>
+      <% } %>
+
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!-- views/profile.ejs -->
+<!doctype html>
+<html>
+<head>
+  <% include ./partials/head %>
+</head>
+<body>
+  <header>
+    <% include ./partials/header %>
+  </header>    
+  <div class="container">
+    <div class="page-header text-center">
+      <h1>Profile Page</h1>
+      <!-- <a href="/logout" class="btn btn-default btn-sm">Logout</a> -->
+    </div>
+
+    <div class="row">
+
+      <!-- LOCAL INFORMATION -->
+      <div class="col-sm-6">
+        <div class="well">
+          <h3><span class="fa fa-user"></span> <%= user.local.firstName %> <%= user.local.lastName %></h3>
+
+          <p>
+            <strong>Email</strong>: <%= user.local.email %><br>
+            <strong>Country</strong>: <%= user.local.country %><br>
+            <strong>Interests</strong>: <%= user.local.interests %>
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</body>
+</html>
